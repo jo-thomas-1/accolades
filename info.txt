@@ -1,0 +1,7 @@
+====== Accolades ====== http://accoladesmedia.co.in/
+
+--- Test Project ---
+
+PHP: 8.1.2
+Bootstrap: 5.1.3
+Git Repository: https://github.com/jothomas1996/accolades.git
