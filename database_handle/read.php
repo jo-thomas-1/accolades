@@ -1,4 +1,5 @@
 <?php
+    // common database read function
     function read_table($table, $columns)
     {
         $connection = mysqli_connect("localhost","root","","accolades");
