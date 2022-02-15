@@ -54,3 +54,14 @@ INSERT INTO `tasks` (`id`, `project_id`, `task_name`, `hour`, `date`, `status`, 
 		(NULL, '1', 'Task 3', '3', '2021-03-28', 'Active', 'Testing'),
 		(NULL, '4', 'Task 4', '6', '2021-03-03', 'Active', 'User management'),
 		(NULL, '4', 'Task 5', '4', '2021-04-04', 'Active', 'Billing Calculation');
+
+--------------------------------------------------------------------------------------------------
+OTHER
+--------------------------------------------------------------------------------------------------
+
+-- make project_id in tasks table foreign key of id in projects table
+-- reflect updates and block delete operations
+ALTER TABLE tasks ADD FOREIGN KEY (project_id) REFERENCES projects(id) ON UPDATE CASCADE ON DELETE NO ACTION;
+
+-- read data for task page
+SELECT tasks.id, projects.project_name, tasks.task_name, tasks.hour, tasks.date, tasks.status, tasks.description FROM tasks JOIN projects WHERE tasks.project_id = projects.id;

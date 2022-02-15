@@ -1,8 +1,7 @@
 <nav class="navbar sticky-top navbar-expand-md navbar-dark mb-5">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <!-- <img class="logo" style="height: 2.5em; width: auto;" src="https://accoladesmedia.co.in/wp-content/uploads/2020/03/newlogo1.png" alt="Logo"> -->
-            <h3>Accolades</h3>
+        <a class="navbar-brand pb-0" href="#">
+            <img class="logo" style="height: 2.5em; width: auto;" src="images/logo_white.png" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleContent" aria-controls="toggleContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

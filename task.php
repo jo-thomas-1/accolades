@@ -11,7 +11,7 @@
 			$current_page = "task";
 			include("common/nav.php");
 
-			$data = json_decode(read_table('tasks', '*'));
+			$data = json_decode(execute_and_read("SELECT tasks.id, projects.project_name, tasks.task_name, tasks.hour, tasks.date, tasks.status, tasks.description FROM tasks JOIN projects WHERE tasks.project_id = projects.id;"));
 		?>
 		
 		<div class="container">
@@ -51,7 +51,7 @@
 								{
 									print '<tr>';
 					                print '<th scope="row">' . $object->id . '</th>';
-					                print '<td>' . $object->project_id . '</td>';
+					                print '<td>' . $object->project_name . '</td>';
 					                print '<td>' . $object->task_name . '</td>';
 					                print '<td>' . $object->status . '</td>';
 					                print '<td class="d-grid gap-2 d-md-flex">
@@ -99,7 +99,7 @@
 								{
 									print '<tr>';
 					                print '<th scope="row">' . $object->id . '</th>';
-					                print '<td>' . $object->project_id . '</td>';
+					                print '<td>' . $object->project_name . '</td>';
 					                print '<td>' . $object->task_name . '</td>';
 					                print '<td>' . $object->hour . '</td>';
 					                print '<td>' . $object->date . '</td>';
