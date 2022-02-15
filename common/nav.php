@@ -9,13 +9,13 @@
         <div class="collapse navbar-collapse" id="toggleContent">
             <ul class="navbar-nav ms-auto mt-3 mb-2 mb-md-0">
                 <li class="nav-item">
-                    <a class="nav-link <?php if($current_page == 'project') print("active"); ?>" aria-current="page" href="index.php">Projects</a>
+                    <a class="nav-link <?php if($current_page == 'report') print("active"); ?>" aria-current="page" href="index.php">Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php if($current_page == 'project') print("active"); ?>" aria-current="page" href="project.php">Projects</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php if($current_page == 'task') print("active"); ?>" aria-current="page" href="task.php">Tasks</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?php if($current_page == 'report') print("active"); ?>" aria-current="page" href="report.php">Reports</a>
                 </li>
             </ul>
         </div>

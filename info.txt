@@ -10,9 +10,9 @@ Git Repository: https://github.com/jothomas1996/accolades.git
 
 --- Pages ---
 
-project [index.php] - View and manage all projects
+report [index.php] - Generate reports
+project [project.php] - View and manage all projects
 task [task.php] - View and manage all tasks
-report [report.php] - Generate reports
 
 --- DataBase ---
 
