@@ -11,7 +11,7 @@
 			$current_page = "project";
 			include("common/nav.php");
 
-			$data = json_decode(execute_and_read("SELECT * FROM projects"));
+			$data = json_decode(execute_and_read("SELECT * FROM projects WHERE status != 'Deleted'"));
 		?>
 		
 		<div class="container">
