@@ -20,7 +20,12 @@
 					<h2>Manage Projects</h2>
 				</div>
 				<div class="col-3 d-grid d-flex justify-content-end">
-					<button type="button" class="btn btn-main"><span class="d-none d-md-inline-block me-3">New Project</span><i class="fa-solid fa-plus"></i></button>
+					<?php include("modals/new_project.php"); ?>
+
+					<!-- new project modal button -->
+					<button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#new_project_modal">
+						<span class="d-none d-md-inline-block me-3">New Project</span><i class="fa-solid fa-plus"></i>
+					</button>
 				</div>
 			</div>
 			<div class="row">
