@@ -1,4 +1,4 @@
-// block right click
+/*// block right click
 window.oncontextmenu = function () {
     return false;
 }
@@ -30,4 +30,4 @@ document.onkeydown = function(e) {
         // ctrl + U
         return false;
     }
-}
+}*/
