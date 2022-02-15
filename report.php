@@ -27,7 +27,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr class="main_row">
+							<tr class="table-secondary">
 								<th scope="row">1</th>
 								<td colspan="2">Project 1</td>
 								<td>11</td>
@@ -44,7 +44,7 @@
 								<td>Task 3</td>
 								<td>3</td>
 							</tr>
-							<tr class="main_row">
+							<tr class="table-secondary">
 								<th scope="row">2</th>
 								<td colspan="2">Project 3</td>
 								<td>11</td>
