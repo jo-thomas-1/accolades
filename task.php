@@ -102,7 +102,7 @@
 					                print '<td>' . $object->project_name . '</td>';
 					                print '<td>' . $object->task_name . '</td>';
 					                print '<td>' . $object->hour . '</td>';
-					                print '<td>' . $object->date . '</td>';
+					                print '<td>' . date_format(date_create($object->date),"d / m / Y") . '</td>';
 					                print '<td>' . $object->description . '</td>';
 					                print '<td class="d-grid gap-2 d-md-flex">
 										<button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
