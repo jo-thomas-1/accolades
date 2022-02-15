@@ -35,13 +35,13 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php								
-								foreach ($data as $object)
+							<?php
+								for ($i=0; $i < sizeof($data); $i++)
 								{
-									print '<tr>';
-					                print '<th scope="row">' . $object->id . '</th>';
-					                print '<td>' . $object->project_name . '</td>';
-					                print '<td>' . $object->status . '</td>';
+									print '<tr id="' . $data[$i]->id . '">';
+					                print '<th scope="row">' . $i + 1 . '</th>';
+					                print '<td>' . $data[$i]->project_name . '</td>';
+					                print '<td>' . $data[$i]->status . '</td>';
 					                print '<td class="d-grid gap-2 d-md-flex">
 					                    <button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
 					                    <button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
