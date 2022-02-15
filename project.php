@@ -20,8 +20,6 @@
 					<h2>Manage Projects</h2>
 				</div>
 				<div class="col-3 d-grid d-flex justify-content-end">
-					<?php include("modals/new_project.php"); ?>
-
 					<!-- new project modal button -->
 					<button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#new_project_modal">
 						<span class="d-none d-md-inline-block me-3">New Project</span><i class="fa-solid fa-plus"></i>
@@ -40,6 +38,14 @@
 							</tr>
 						</thead>
 						<tbody>
+							<script type="text/javascript">
+								function fill_update_form(id, project_name, status)
+								{
+									document.getElementById('update_project_id').value = id;
+									document.getElementById('update_project_name').value = project_name;
+									document.getElementById('update_project_status').value = status;
+								}
+							</script>
 							<?php
 								for ($i=0; $i < sizeof($data); $i++)
 								{
@@ -48,7 +54,9 @@
 					                print '<td>' . $data[$i]->project_name . '</td>';
 					                print '<td>' . $data[$i]->status . '</td>';
 					                print '<td class="d-grid gap-2 d-md-flex">
-					                    <button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
+					                    <button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#update_project_modal" onclick="fill_update_form(' . $data[$i]->id . ', \'' . $data[$i]->project_name . '\', \'' . $data[$i]->status . '\')">
+					                    	<i class="fa-solid fa-pen"></i>
+					                    </button>
 					                    <button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
 					                </td>
 					            </tr>';
@@ -60,7 +68,9 @@
 								<td>Project 1</td>
 								<td>Active</td>
 								<td class="d-grid gap-2 d-md-flex">
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
+									<button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#update_project_modal" onclick="fill_update_form(1, 'Project 1', 'Active')">
+										<i class="fa-solid fa-pen"></i>
+									</button>
 									<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
 								</td>
 							</tr>
@@ -71,6 +81,13 @@
 			</div>
 		</div>
 
-		<?php include("common/foot.php"); ?>
+		<?php
+			// page modals
+			include("modals/new_project_modal.php");
+			include("modals/update_project_modal.php");
+
+			// page footer
+			include("common/foot.php");
+		?>
 	</body>
 </html>
