@@ -6,8 +6,12 @@
 	<body>
 		<!-- Navbar -->
 		<?php
+			include("database_handle/read.php");
+
 			$current_page = "task";
 			include("common/nav.php");
+
+			$data = json_decode(read_table('tasks', '*'));
 		?>
 		
 		<div class="container">
@@ -42,6 +46,22 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php								
+								foreach ($data as $object)
+								{
+									print '<tr>';
+					                print '<th scope="row">' . $object->id . '</th>';
+					                print '<td>' . $object->project_id . '</td>';
+					                print '<td>' . $object->task_name . '</td>';
+					                print '<td>' . $object->status . '</td>';
+					                print '<td class="d-grid gap-2 d-md-flex">
+										<button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
+										<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
+									</td>
+								</tr>';
+								}
+							?>
+							<!--
 							<tr>
 								<th scope="row">1</th>
 								<td>Project 1</td>
@@ -52,26 +72,8 @@
 									<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
 								</td>
 							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>Project 1</td>
-								<td>Task 2</td>
-								<td>Inactive</td>
-								<td class="d-grid gap-2 d-md-flex">
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>Project 3</td>
-								<td>Task 1</td>
-								<td>Active</td>
-								<td class="d-grid gap-2 d-md-flex">
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
-								</td>
-							</tr>
+							-->
+						</tbody>
 					</table>
 				</div>
 			</div>
@@ -92,6 +94,24 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php								
+								foreach ($data as $object)
+								{
+									print '<tr>';
+					                print '<th scope="row">' . $object->id . '</th>';
+					                print '<td>' . $object->project_id . '</td>';
+					                print '<td>' . $object->task_name . '</td>';
+					                print '<td>' . $object->hour . '</td>';
+					                print '<td>' . $object->date . '</td>';
+					                print '<td>' . $object->description . '</td>';
+					                print '<td class="d-grid gap-2 d-md-flex">
+										<button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
+										<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
+									</td>
+								</tr>';
+								}
+							?>
+							<!--
 							<tr>
 								<th scope="row">1</th>
 								<td>Project 1</td>
@@ -104,30 +124,8 @@
 									<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
 								</td>
 							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>Project 1</td>
-								<td>Task 2</td>
-								<td>3</td>
-								<td>24/01/2022</td>
-								<td>Testing</td>
-								<td class="d-grid gap-2 d-md-flex">
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>Project 3</td>
-								<td>Task 1</td>
-								<td>6</td>
-								<td>25/01/2022</td>
-								<td>Analysis</td>
-								<td class="d-grid gap-2 d-md-flex">
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
-								</td>
-							</tr>
+							-->
+						</tbody>
 					</table>
 				</div>
 			</div>

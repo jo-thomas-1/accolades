@@ -61,6 +61,7 @@
 								<td>Task 5</td>
 								<td>3</td>
 							</tr>
+						</tbody>
 					</table>
 				</div>
 			</div>

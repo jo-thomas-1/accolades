@@ -13,3 +13,44 @@ Git Repository: https://github.com/jothomas1996/accolades.git
 project [index.php] - View and manage all projects
 task [task.php] - View and manage all tasks
 report [report.php] - Generate reports
+
+--- DataBase ---
+
+MySQL : phpMyAdmin
+
+DB Connection: mysqli_connect("localhost","root","","accolades");
+
+DB :: accolades ::
+projects - id, project_name, status
+tasks - id, project_id, task_name, hour, date, status, description
+
+-- Projects Table ------------------------------------------------
+CREATE TABLE `accolades`.`projects` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`project_name` VARCHAR(50) NOT NULL,
+	`status` VARCHAR(50) NOT NULL DEFAULT 'Active',
+	PRIMARY KEY  (`id`));
+
+INSERT INTO `projects` (`id`, `project_name`, `status`)
+	VALUES ('1', 'Project 1', 'Active'),
+		(NULL, 'Project 2', 'Inactive'),
+		(NULL, 'Project 3', 'Active'),
+		(NULL, 'Project 4', 'Active');
+
+-- Tasks Table ------------------------------------------------
+CREATE TABLE `accolades`.`tasks` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`project_id` INT NOT NULL,
+	`task_name` VARCHAR(50) NOT NULL,
+	`hour` INT NOT NULL DEFAULT '0',
+	`date` DATE NOT NULL,
+	`status` VARCHAR(50) NOT NULL DEFAULT 'Active',
+	`description` VARCHAR(255) NOT NULL,
+	PRIMARY KEY (`id`));
+
+INSERT INTO `tasks` (`id`, `project_id`, `task_name`, `hour`, `date`, `status`, `description`)
+	VALUES ('1', '1', 'Task 1', '2', '2021-02-02', 'Active', 'DB Creation'),
+		(NULL, '1', 'Task 2', '6', '2021-02-25', 'Active', 'Bug fixing'),
+		(NULL, '1', 'Task 3', '3', '2021-03-28', 'Active', 'Testing'),
+		(NULL, '4', 'Task 4', '6', '2021-03-03', 'Active', 'User management'),
+		(NULL, '4', 'Task 5', '4', '2021-04-04', 'Active', 'Billing Calculation');

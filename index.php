@@ -6,8 +6,12 @@
 	<body>
 		<!-- Navbar -->
 		<?php
+			include("database_handle/read.php");
+
 			$current_page = "project";
 			include("common/nav.php");
+
+			$data = json_decode(read_table('projects', '*'));
 		?>
 		
 		<div class="container">
@@ -31,6 +35,21 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php								
+								foreach ($data as $object)
+								{
+									print '<tr>';
+					                print '<th scope="row">' . $object->id . '</th>';
+					                print '<td>' . $object->project_name . '</td>';
+					                print '<td>' . $object->status . '</td>';
+					                print '<td class="d-grid gap-2 d-md-flex">
+					                    <button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
+					                    <button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
+					                </td>
+					            </tr>';
+								}
+							?>
+							<!--
 							<tr>
 								<th scope="row">1</th>
 								<td>Project 1</td>
@@ -40,24 +59,8 @@
 									<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
 								</td>
 							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>Project 2</td>
-								<td>Inactive</td>
-								<td class="d-grid gap-2 d-md-flex">
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>Project 3</td>
-								<td>Active</td>
-								<td class="d-grid gap-2 d-md-flex">
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-pen"></i></button>
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
-								</td>
-							</tr>
+							-->
+						</tbody>
 					</table>
 				</div>
 			</div>
