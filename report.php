@@ -5,7 +5,10 @@
 	</head>
 	<body>
 		<!-- Navbar -->
-		<?php include("common/nav.php"); ?>
+		<?php
+			$current_page = "report";
+			include("common/nav.php");
+		?>
 		
 		<div class="container">
 			<div class="row mb-4">

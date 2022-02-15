@@ -27,3 +27,12 @@
 .active {
 	color: #ffffff;
 }
+
+.btn-main {
+	background-color: #0c7479 !important;
+	color: #ffffff !important;
+}
+
+.main_row {
+	background-color: #e9ecef !important;
+}
