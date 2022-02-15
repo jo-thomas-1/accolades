@@ -19,10 +19,10 @@
 					<button type="button" class="btn btn-main">
 						<span class="d-none d-md-inline-block me-3">New Task</span><i class="fa-solid fa-plus"></i>
 					</button>
-					<button type="button" class="btn btn-main">
+					<button type="button" class="btn btn-main d-none" id="task_view_button" onclick="toggle_table_and_button('time_view', 'task_view');">
 						<span class="d-none d-md-inline-block me-3">Task View</span><i class="fa-solid fa-list-check"></i>
 					</button>
-					<button type="button" class="btn btn-main">
+					<button type="button" class="btn btn-main" id="time_view_button" onclick="toggle_table_and_button('task_view', 'time_view');">
 						<span class="d-none d-md-inline-block me-3">Time View</span><i class="fa-solid fa-clock"></i>
 					</button>
 				</div>
@@ -77,7 +77,7 @@
 			</div>
 
 			<!-- time view table -->
-			<div class="row" id="time_view_table">
+			<div class="row d-none" id="time_view_table">
 				<div class="col">
 					<table class="table table-striped">
 						<thead>
