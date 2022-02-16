@@ -8,7 +8,7 @@
 					<span aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
 				</button>
 			</div>
-			<form id="update_task_form" method="GET" action="database_handle/update_task.php">
+			<form id="update_task_form" method="POST" action="database_handle/update_task.php">
 				<div class="modal-body">
 					<input type="text" class="form-control mb-3" id="update_task_id" name="update_task_id" placeholder="Project Name" required hidden readonly value="0">
 					<select class="form-select mb-3" id="update_task_project_id" name="update_task_project_id" required>
@@ -38,7 +38,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-					<button type="submit" class="btn btn-main">Add</button>
+					<button type="submit" class="btn btn-main">Update</button>
 				</div>
 			</form>
 		</div>
