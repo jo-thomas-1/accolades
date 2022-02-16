@@ -10,7 +10,7 @@
 			</div>
 			<form id="new_task_form" method="GET" action="database_handle/add_new_task.php">
 				<div class="modal-body">
-					<select class="form-select mb-3" id="task_status" name="project_id" required>
+					<select class="form-select mb-3" id="task_project_id" name="task_project_id" required>
 						<option selected>Choose a project</option>
 
 						<!-- get project list from database -->
