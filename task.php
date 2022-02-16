@@ -11,7 +11,7 @@
 			$current_page = "task";
 			include("common/nav.php");
 
-			$data = json_decode(execute_and_read("SELECT tasks.id, tasks.project_id, projects.project_name, tasks.task_name, tasks.hour, tasks.date, tasks.status, tasks.description FROM tasks JOIN projects WHERE tasks.project_id = projects.id;"));
+			$data = json_decode(execute_and_read("SELECT tasks.id, tasks.project_id, projects.project_name, tasks.task_name, tasks.hour, tasks.date, tasks.status, tasks.description FROM tasks JOIN projects WHERE tasks.project_id = projects.id AND tasks.status != 'Deleted';"));
 		?>
 		
 		<div class="container">
@@ -111,7 +111,7 @@
 										<button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#update_task_modal" onclick="fill_task_update_form(' . $object->id . ', \'' . $object->project_id . '\', \'' . $object->task_name . '\', \'' . $object->hour . '\', \'' . $object->date . '\', \'' . $object->status . '\', \'' . $object->description . '\')">
 											<i class="fa-solid fa-pen"></i>
 										</button>
-										<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
+										<button type="button" class="btn btn-main" onclick="fill_task_update_form(' . $data[$i]->id . ', \'' . $data[$i]->project_id . '\', \'' . $data[$i]->task_name . '\', \'' . $data[$i]->hour . '\', \'' . $data[$i]->date . '\', \'Deleted\', \'' . $data[$i]->description . '\'); document.getElementById(\'update_task_form\').submit();"><i class="fa-solid fa-trash"></i></button>
 									</td>
 								</tr>';
 								}
