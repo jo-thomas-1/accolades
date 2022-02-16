@@ -59,7 +59,7 @@
 										<button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#update_task_modal" onclick="fill_task_update_form(' . $data[$i]->id . ', \'' . $data[$i]->project_id . '\', \'' . $data[$i]->task_name . '\', \'' . $data[$i]->hour . '\', \'' . $data[$i]->date . '\', \'' . $data[$i]->status . '\', \'' . $data[$i]->description . '\')">
 											<i class="fa-solid fa-pen"></i>
 										</button>
-										<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
+										<button type="button" class="btn btn-main" onclick="fill_task_update_form(' . $data[$i]->id . ', \'' . $data[$i]->project_id . '\', \'' . $data[$i]->task_name . '\', \'' . $data[$i]->hour . '\', \'' . $data[$i]->date . '\', \'Deleted\', \'' . $data[$i]->description . '\'); document.getElementById(\'update_task_form\').submit();"><i class="fa-solid fa-trash"></i></button>
 									</td>
 								</tr>';
 								}

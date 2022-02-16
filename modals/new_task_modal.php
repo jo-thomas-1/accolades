@@ -32,7 +32,7 @@
 						<option selected value="Active">Active</option>
 						<option value="Inactive">Inactive</option>
 					</select>
-					<textarea class="form-control" id="task_description" rows="3"></textarea>
+					<textarea class="form-control" id="task_description" name="task_description" rows="3"></textarea>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

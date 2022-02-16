@@ -9,7 +9,7 @@
         exit();
     }
 
-    $sql = "INSERT INTO tasks (`project_name`, `status`) VALUES ('" . $_GET['project_name'] . "', '" . $_GET['project_status'] . "');";
+    $sql = "INSERT INTO tasks (`project_id`, `task_name`, `hour`, `date`, `status`, `description`) VALUES ('" . $_GET['task_project_id'] . "', '" . $_GET['task_name'] . "', '" . $_GET['task_hour'] . "', '" . $_GET['task_date'] . "', '" . $_GET['task_status'] . "', '" . $_GET['task_description'] . "');";
 
     $result = mysqli_query($connection, $sql);
 
@@ -19,5 +19,5 @@
     mysqli_close($connection);
 
     // redirect back to project page
-    header("Location: ../project.php");
+    header("Location: ../task.php");
 ?>
