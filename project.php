@@ -38,14 +38,6 @@
 							</tr>
 						</thead>
 						<tbody>
-							<script type="text/javascript">
-								function fill_update_form(id, project_name, status)
-								{
-									document.getElementById('update_project_id').value = id;
-									document.getElementById('update_project_name').value = project_name;
-									document.getElementById('update_project_status').value = status;
-								}
-							</script>
 							<?php
 								for ($i=0; $i < sizeof($data); $i++)
 								{
@@ -54,10 +46,10 @@
 					                print '<td>' . $data[$i]->project_name . '</td>';
 					                print '<td>' . $data[$i]->status . '</td>';
 					                print '<td class="d-grid gap-2 d-md-flex">
-					                    <button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#update_project_modal" onclick="fill_update_form(' . $data[$i]->id . ', \'' . $data[$i]->project_name . '\', \'' . $data[$i]->status . '\')">
+					                    <button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#update_project_modal" onclick="fill_project_update_form(' . $data[$i]->id . ', \'' . $data[$i]->project_name . '\', \'' . $data[$i]->status . '\')">
 					                    	<i class="fa-solid fa-pen"></i>
 					                    </button>
-					                    <button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
+					                    <button type="button" class="btn btn-main" onclick="fill_project_update_form(' . $data[$i]->id . ', \'' . $data[$i]->project_name . '\', \'Deleted\'); document.getElementById(\'update_project_form\').submit();"><i class="fa-solid fa-trash"></i></button>
 					                </td>
 					            </tr>';
 								}
@@ -68,10 +60,10 @@
 								<td>Project 1</td>
 								<td>Active</td>
 								<td class="d-grid gap-2 d-md-flex">
-									<button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#update_project_modal" onclick="fill_update_form(1, 'Project 1', 'Active')">
+									<button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#update_project_modal" onclick="fill_project_update_form(1, 'Project 1', 'Active')">
 										<i class="fa-solid fa-pen"></i>
 									</button>
-									<button type="button" class="btn btn-main"><i class="fa-solid fa-trash"></i></button>
+									<button type="button" class="btn btn-main" onclick="fill_project_update_form(1, 'Project 1', 'Active'); document.getElementById('update_project_form').submit();"><i class="fa-solid fa-trash"></i></button>
 								</td>
 							</tr>
 							-->

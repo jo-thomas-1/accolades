@@ -1,6 +1,7 @@
 <!-- Custom JS -->
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/display.js"></script>
+<script type="text/javascript" src="js/autofill.js"></script>
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/2b2b328c2a.js" crossorigin="anonymous"></script>

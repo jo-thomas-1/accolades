@@ -15,6 +15,7 @@
 					<select class="form-select" id="update_project_status" name="update_project_status">
 						<option selected value="Active">Active</option>
 						<option value="Inactive">Inactive</option>
+						<option value="Deleted" hidden>Deleted</option>
 					</select>
 				</div>
 				<div class="modal-footer">
