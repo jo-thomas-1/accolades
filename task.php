@@ -20,7 +20,8 @@
 					<h2>Manage Tasks</h2>
 				</div>
 				<div class="col d-grid gap-2 d-flex justify-content-end">
-					<button type="button" class="btn btn-main">
+					<!-- new task modal button -->
+					<button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#new_task_modal">
 						<span class="d-none d-md-inline-block me-3">New Task</span><i class="fa-solid fa-plus"></i>
 					</button>
 					<button type="button" class="btn btn-main d-none" id="task_view_button" onclick="toggle_table_and_button('time_view', 'task_view');">
@@ -131,6 +132,13 @@
 			</div>
 		</div>
 
-		<?php include("common/foot.php"); ?>
+		<?php
+			// page modals
+			include("modals/new_task_modal.php");
+			include("modals/update_task_modal.php");
+
+			// page footer
+			include("common/foot.php");
+		?>
 	</body>
 </html>

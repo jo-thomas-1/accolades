@@ -31,3 +31,16 @@ document.onkeydown = function(e) {
         return false;
     }
 }*/
+
+function today()
+{
+    let date = new Date;
+    let today = date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+    return today;
+}
+
+function set_date(element, date=0)
+{
+    if(date) document.getElementById(element).value = date;
+    else document.getElementById(element).value = today();
+}
